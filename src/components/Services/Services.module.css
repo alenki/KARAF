@@ -70,7 +70,8 @@
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   font-weight: 500;
   color: var(--color-cream);
-  min-width: 280px;
+  width: 380px;
+  flex-shrink: 0;
 }
 
 .cardDesc {
