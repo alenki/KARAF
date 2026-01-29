@@ -12,7 +12,7 @@ import TechMarquee from './components/TechMarquee/TechMarquee';
 import Contact from './components/Contact/Contact';
 export default function App() {
   const { isLoading, finishLoading } = usePreloader();
-  useLenis();
+  useLenis(isLoading);
 
   return (
     <>
