@@ -1,0 +1,13 @@
+  Now let us start planning this website. I want top notch, professional and luxurius awaard winning site for my IT agency based in Russia. It is focused on buildin Web and Mobile apps, as well as AI, telegram bots and such. I want it as creative as possible, I want you to think as hard as you  
+  can, reach your maximum capabilites to output the best most creative looking professional IT agency website you could ever create.                     
+  Use the frontend-design skill for this and keep in mind the frontend-aesthetics idea in @README.me.                                                    
+  I sent you some references for the inspiration for the creativity I'm trying to explain to you. Use all tools available to make the best award         
+  winning site (gsap and such).                                                                                                                          
+  All projects I want you to show are in @public/projects                                                                                                
+  References:                                                                                                                                            
+  1. https://www.mason-wong.com/work                                                                                                                     
+  2. https://snowflake.studio/                                                                                                                           
+  3. https://studiodialect.com/                                                                                                                          
+  4. https://janissne.com/                                                                                                                               
+  5. https://muizzwebstudio.com/                                                                                                                         
+  Use playwright if needed.     
