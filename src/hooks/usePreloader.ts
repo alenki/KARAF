@@ -5,6 +5,7 @@ export function usePreloader() {
 
   const finishLoading = useCallback(() => {
     setIsLoading(false);
+    document.body.classList.remove('is-loading');
   }, []);
 
   return { isLoading, finishLoading };

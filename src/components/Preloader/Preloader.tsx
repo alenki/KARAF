@@ -14,6 +14,12 @@ export default function Preloader({ onComplete }: PreloaderProps) {
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
+    // Remove the static HTML preloader now that React has mounted
+    const staticPreloader = document.getElementById('static-preloader');
+    if (staticPreloader) {
+      staticPreloader.remove();
+    }
+
     const tl = gsap.timeline({
       onComplete: () => {
         // Exit animation
