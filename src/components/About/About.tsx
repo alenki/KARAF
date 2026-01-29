@@ -40,27 +40,11 @@ export default function About() {
   return (
     <section ref={sectionRef} id="about" className={styles.about}>
       <div className={styles.container}>
-        <div className={styles.grid}>
-          <div className={styles.left}>
-            <ScrollReveal>
-              <h2 className={styles.statement}>
-                We build digital products that matter.
-              </h2>
-            </ScrollReveal>
-          </div>
-          <div className={styles.right}>
-            <ScrollReveal delay={0.2}>
-              <p className={styles.philosophy}>
-                KARAF is a digital agency based in Russia, specializing in crafting
-                exceptional web and mobile experiences. We combine cutting-edge
-                technology with bold design thinking to deliver products that stand
-                apart. From AI-powered solutions to pixel-perfect interfaces, every
-                project is built with precision, purpose, and an obsessive attention
-                to detail.
-              </p>
-            </ScrollReveal>
-          </div>
-        </div>
+        <ScrollReveal>
+          <p className={styles.manifesto}>
+            Digital agency based in Russia, we design and build products where strategy, engineering, and artificial intelligence compound as one integrated practice.
+          </p>
+        </ScrollReveal>
 
         <div className={styles.stats}>
           {STATS.map((stat, i) => (
