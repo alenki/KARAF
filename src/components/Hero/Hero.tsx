@@ -18,26 +18,26 @@ export default function Hero({ ready }: HeroProps) {
     const chars = titleRef.current.querySelectorAll('span');
     const tl = gsap.timeline({ delay: 0.3 });
 
-    tl.from(chars, {
-      clipPath: 'inset(0 100% 0 0)',
+    tl.to(chars, {
+      clipPath: 'inset(0 0% 0 0)',
       duration: 0.9,
       ease: 'power4.out',
       stagger: 0.06,
     })
-      .from(
+      .to(
         subtitleRef.current,
         {
-          y: 30,
-          opacity: 0,
+          y: 0,
+          opacity: 1,
           duration: 0.8,
           ease: 'power3.out',
         },
         '-=0.3'
       )
-      .from(
+      .to(
         scrollRef.current,
         {
-          opacity: 0,
+          opacity: 1,
           duration: 0.6,
         },
         '-=0.2'
