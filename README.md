@@ -2,7 +2,7 @@
 KARAF website
 
 An IT agency located in Russia named KARAF. 
-Focused on buildin Web and Mobile apps, as well as AI, telegram bots and such.
+FFocused on buildin Web and Mobile apps, as well as AI, telegram bots and such.
 
 # React + TypeScript + Vite
 

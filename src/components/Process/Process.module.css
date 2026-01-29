@@ -1,0 +1,118 @@
+.process {
+  padding: var(--space-xl) var(--container-padding);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-style: italic;
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.step {
+  position: relative;
+  width: 45%;
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.stepLeft {
+  margin-right: auto;
+  text-align: right;
+}
+
+.stepRight {
+  margin-left: auto;
+  text-align: left;
+}
+
+.bgNumber {
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: clamp(5rem, 10vw, 10rem);
+  font-weight: 700;
+  color: var(--color-graphite);
+  line-height: 1;
+  top: -1rem;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.stepLeft .bgNumber {
+  right: 0;
+}
+
+.stepRight .bgNumber {
+  left: 0;
+}
+
+.stepNumber {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--color-ember);
+  display: block;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 500;
+  color: var(--color-cream);
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.stepDesc {
+  font-size: 0.95rem;
+  color: var(--color-smoke);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .line {
+    left: 1rem;
+  }
+
+  .step {
+    width: 100%;
+    padding-left: 3rem;
+    text-align: left;
+  }
+
+  .stepLeft {
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .bgNumber {
+    left: 0 !important;
+    right: auto !important;
+  }
+}

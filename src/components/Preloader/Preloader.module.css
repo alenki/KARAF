@@ -1,0 +1,61 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: var(--color-void);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 8vw;
+  color: var(--color-cream);
+  display: flex;
+  gap: 0.02em;
+}
+
+.letter {
+  display: inline-block;
+  will-change: clip-path;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 200px;
+}
+
+.barTrack {
+  flex: 1;
+  height: 2px;
+  background-color: var(--color-ash);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background-color: var(--color-ember);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
+.counter {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-smoke);
+  min-width: 2.5rem;
+  text-align: right;
+}

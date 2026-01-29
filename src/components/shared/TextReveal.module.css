@@ -1,0 +1,9 @@
+.lineWrapper {
+  display: block;
+  overflow: hidden;
+}
+
+.line {
+  display: inline-block;
+  will-change: transform;
+}

@@ -1,0 +1,122 @@
+.contact {
+  padding: var(--space-2xl) var(--container-padding);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-style: italic;
+  color: var(--color-cream);
+  margin-bottom: var(--space-xl);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.field {
+  width: 100%;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-bone);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-ash);
+  padding: 1rem 0;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--color-smoke);
+}
+
+.input:focus,
+.textarea:focus {
+  border-color: var(--color-ember);
+}
+
+.submitBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  background-color: transparent;
+  border: 1px solid var(--color-ash);
+  border-radius: 100px;
+  padding: 1rem 2.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  align-self: flex-start;
+  will-change: transform;
+}
+
+.submitBtn:hover {
+  background-color: var(--color-ember);
+  border-color: var(--color-ember);
+  color: var(--color-cream);
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.linkLabel {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-smoke);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.linkValue {
+  font-family: var(--font-body);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  color: var(--color-cream);
+  transition: color 0.3s ease;
+}
+
+.linkValue:hover {
+  color: var(--color-ember);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .links {
+    order: -1;
+  }
+}
