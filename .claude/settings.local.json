@@ -12,7 +12,8 @@
       "Bash(npm uninstall:*)",
       "Bash(npx tsc -b)",
       "Bash(npm run build:*)",
-      "Bash(npm run lint)"
+      "Bash(npm run lint)",
+      "Bash(npx tsc:*)"
     ]
   }
 }

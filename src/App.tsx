@@ -10,8 +10,6 @@ import Projects from './components/Projects/Projects';
 import Process from './components/Process/Process';
 import TechMarquee from './components/TechMarquee/TechMarquee';
 import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-
 export default function App() {
   const { isLoading, finishLoading } = usePreloader();
   useLenis();
@@ -30,7 +28,6 @@ export default function App() {
         <TechMarquee />
         <Contact />
       </main>
-      <Footer />
     </>
   );
 }

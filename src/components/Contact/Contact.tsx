@@ -1,119 +1,116 @@
-import { useRef, useState, type FormEvent } from 'react';
+import { useRef } from 'react';
 import { useGSAP, gsap } from '../../hooks/useGSAP';
 import ScrollReveal from '../shared/ScrollReveal';
 import styles from './Contact.module.css';
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
-  const btnRef = useRef<HTMLButtonElement>(null);
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const wordmarkRef = useRef<HTMLDivElement>(null);
 
-  // Magnetic button effect
+  // Parallax drift on the wordmark
   useGSAP(() => {
-    const btn = btnRef.current;
-    if (!btn) return;
+    const wm = wordmarkRef.current;
+    if (!wm) return;
 
-    const onMove = (e: MouseEvent) => {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      const radius = 80;
-      const dist = Math.sqrt(x * x + y * y);
-
-      if (dist < radius) {
-        gsap.to(btn, {
-          x: x * 0.3,
-          y: y * 0.3,
-          duration: 0.3,
-          ease: 'power2.out',
-        });
-      }
-    };
-
-    const onLeave = () => {
-      gsap.to(btn, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.3)' });
-    };
-
-    btn.addEventListener('mousemove', onMove);
-    btn.addEventListener('mouseleave', onLeave);
-
-    return () => {
-      btn.removeEventListener('mousemove', onMove);
-      btn.removeEventListener('mouseleave', onLeave);
-    };
+    gsap.to(wm, {
+      yPercent: -15,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1,
+      },
+    });
   }, []);
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    // Form submission logic would go here
-    console.log('Form submitted:', formData);
-  };
 
   return (
     <section ref={sectionRef} id="contact" className={styles.contact}>
-      <div className={styles.container}>
+      {/* ── Headline ── */}
+      <div className={styles.headlineRow}>
         <ScrollReveal>
           <h2 className={styles.title}>
-            Let&apos;s build something extraordinary.
+            Let&apos;s build something<br />extraordinary.
           </h2>
         </ScrollReveal>
+      </div>
 
-        <div className={styles.grid}>
-          <form className={styles.form} onSubmit={handleSubmit}>
-            <div className={styles.field}>
-              <input
-                type="text"
-                placeholder="Name"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className={styles.input}
-                required
-              />
-            </div>
-            <div className={styles.field}>
-              <input
-                type="email"
-                placeholder="Email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                className={styles.input}
-                required
-              />
-            </div>
-            <div className={styles.field}>
-              <textarea
-                placeholder="Tell us about your project"
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                className={styles.textarea}
-                rows={4}
-                required
-              />
-            </div>
-            <button ref={btnRef} type="submit" className={styles.submitBtn}>
-              <span>Send Message</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      {/* ── Divider with ember accent ── */}
+      <div className={styles.divider}>
+        <span className={styles.dividerAccent} />
+      </div>
+
+      {/* ── Contact grid ── */}
+      <div className={styles.contactGrid}>
+        <ScrollReveal delay={0.1}>
+          <div className={styles.contactBlock}>
+            <span className={styles.contactLabel}>Telegram</span>
+            <a
+              href="https://t.me/karaf"
+              className={styles.contactValue}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @karaf
+              <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
-            </button>
-          </form>
-
-          <div className={styles.links}>
-            <ScrollReveal delay={0.2}>
-              <div className={styles.linkGroup}>
-                <span className={styles.linkLabel}>Telegram</span>
-                <a href="https://t.me/karaf" className={styles.linkValue} target="_blank" rel="noopener noreferrer">
-                  @karaf
-                </a>
-              </div>
-              <div className={styles.linkGroup}>
-                <span className={styles.linkLabel}>Email</span>
-                <a href="mailto:hello@karaf.ru" className={styles.linkValue}>
-                  hello@karaf.ru
-                </a>
-              </div>
-            </ScrollReveal>
+            </a>
           </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.2}>
+          <div className={styles.contactBlock}>
+            <span className={styles.contactLabel}>Email</span>
+            <a href="mailto:hello@karaf.ru" className={styles.contactValue}>
+              hello@karaf.ru
+              <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={0.3}>
+          <div className={styles.contactBlock}>
+            <span className={styles.contactLabel}>Location</span>
+            <span className={styles.contactValueStatic}>
+              Russia
+            </span>
+          </div>
+        </ScrollReveal>
+      </div>
+
+      {/* ── Giant wordmark ── */}
+      <div className={styles.wordmarkWrap}>
+        <div ref={wordmarkRef} className={styles.wordmark} aria-hidden="true">
+          KARAF
+        </div>
+      </div>
+
+      {/* ── Nav row ── */}
+      <nav className={styles.navRow}>
+        <a href="#about" className={styles.navLink}>About</a>
+        <a href="#services" className={styles.navLink}>Services</a>
+        <a href="#projects" className={styles.navLink}>Projects</a>
+        <a href="#process" className={styles.navLink}>Process</a>
+      </nav>
+
+      {/* ── Bottom bar ── */}
+      <div className={styles.bottomBar}>
+        <span className={styles.copyright}>
+          &copy; {new Date().getFullYear()} KARAF
+        </span>
+        <span className={styles.bottomTag}>Digital Craftsmanship</span>
+        <div className={styles.socials}>
+          <a
+            href="https://t.me/karaf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.socialLink}
+          >
+            Telegram&ensp;&rsaquo;
+          </a>
         </div>
       </div>
     </section>
