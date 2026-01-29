@@ -16,24 +16,22 @@ export default function Projects() {
     const track = trackRef.current;
     const totalScroll = track.scrollWidth - window.innerWidth;
 
-    const st = ScrollTrigger.create({
-      trigger: sectionRef.current,
-      start: 'top top',
-      end: () => `+=${totalScroll}`,
-      pin: true,
-      scrub: 1,
-      invalidateOnRefresh: true,
-      onUpdate: (self) => {
-        if (progressRef.current) {
-          progressRef.current.style.transform = `scaleX(${self.progress})`;
-        }
-      },
-    });
-
     gsap.to(track, {
       x: -totalScroll,
       ease: 'none',
-      scrollTrigger: st,
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top -5%',
+        end: () => `+=${totalScroll}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          if (progressRef.current) {
+            progressRef.current.style.transform = `scaleX(${self.progress})`;
+          }
+        },
+      },
     });
   }, [isMobile]);
 
