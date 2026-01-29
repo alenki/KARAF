@@ -126,6 +126,13 @@
 }
 
 /* Mobile stacked layout */
+@media (max-width: 768px) {
+  .projects {
+    height: auto;
+    overflow: visible;
+  }
+}
+
 .mobileGrid {
   display: flex;
   flex-direction: column;
