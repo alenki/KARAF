@@ -1,8 +1,12 @@
 .projects {
-  padding: var(--space-xl) 0;
+  padding: calc(var(--nav-height) + 1rem) 0 1.5rem;
   position: relative;
   z-index: 1;
   background-color: var(--color-void);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -10,12 +14,12 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 0 var(--container-padding);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .title {
   font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-style: italic;
 }
 
@@ -28,20 +32,27 @@
 /* Horizontal scroll track */
 .track {
   display: flex;
+  align-items: stretch;
   gap: 4vw;
   padding: 0 var(--container-padding);
   will-change: transform;
+  flex: 1;
+  min-height: 0;
 }
 
 .card {
   flex-shrink: 0;
   width: 65vw;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .imageWrapper {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  flex: 1;
+  min-height: 0;
   overflow: hidden;
   border-radius: 4px;
   background-color: var(--color-graphite);
@@ -98,7 +109,7 @@
 
 /* Progress bar */
 .progressTrack {
-  margin: var(--space-md) var(--container-padding) 0;
+  margin: 1rem var(--container-padding) 0;
   height: 2px;
   background-color: var(--color-ash);
   overflow: hidden;

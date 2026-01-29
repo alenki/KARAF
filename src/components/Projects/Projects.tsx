@@ -21,7 +21,7 @@ export default function Projects() {
       ease: 'none',
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: 'top -5%',
+        start: 'top top',
         end: () => `+=${totalScroll}`,
         pin: true,
         scrub: 1,
