@@ -33,15 +33,17 @@ export default function CustomCursor() {
     const onMouseLeaveLink = () => {
       outer.classList.remove(styles.hovering);
       outer.classList.remove(styles.projectHover);
-      inner.style.display = '';
+      inner.classList.remove(styles.hidden);
     };
 
     const onMouseEnterProject = () => {
       outer.classList.add(styles.projectHover);
+      inner.classList.add(styles.hidden);
     };
 
     const onMouseLeaveProject = () => {
       outer.classList.remove(styles.projectHover);
+      inner.classList.remove(styles.hidden);
     };
 
     const loop = () => {

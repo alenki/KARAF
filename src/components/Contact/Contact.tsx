@@ -1,5 +1,6 @@
-import { useRef } from 'react';
+import { useRef, useCallback } from 'react';
 import { useGSAP, gsap } from '../../hooks/useGSAP';
+import { getLenis } from '../../hooks/useLenis';
 import ScrollReveal from '../shared/ScrollReveal';
 import styles from './Contact.module.css';
 
@@ -22,6 +23,18 @@ export default function Contact() {
         scrub: 1,
       },
     });
+  }, []);
+
+  const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href');
+    if (!href) return;
+    const lenis = getLenis();
+    if (lenis) {
+      lenis.scrollTo(href, { duration: 1.2 });
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, []);
 
   return (
@@ -93,10 +106,10 @@ export default function Contact() {
 
       {/* ── Nav row ── */}
       <nav className={styles.navRow}>
-        <a href="#about" className={styles.navLink}>About</a>
-        <a href="#services" className={styles.navLink}>Services</a>
-        <a href="#projects" className={styles.navLink}>Projects</a>
-        <a href="#process" className={styles.navLink}>Process</a>
+        <a href="#about" className={styles.navLink} onClick={handleNavClick}>About</a>
+        <a href="#services" className={styles.navLink} onClick={handleNavClick}>Services</a>
+        <a href="#projects" className={styles.navLink} onClick={handleNavClick}>Work</a>
+        <a href="#contact" className={styles.navLink} onClick={handleNavClick}>Contact</a>
       </nav>
 
       {/* ── Bottom bar ── */}
