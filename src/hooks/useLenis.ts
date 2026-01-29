@@ -9,7 +9,7 @@ export function getLenis(): Lenis | null {
   return lenisInstance;
 }
 
-export function useLenis() {
+export function useLenis(isLoading = false) {
   const lenis = useRef<Lenis | null>(null);
 
   useEffect(() => {
@@ -19,6 +19,9 @@ export function useLenis() {
     });
 
     lenisInstance = lenis.current;
+
+    // Start stopped during loading
+    lenis.current.stop();
 
     lenis.current.on('scroll', ScrollTrigger.update);
 
@@ -32,6 +35,19 @@ export function useLenis() {
       lenisInstance = null;
     };
   }, []);
+
+  useEffect(() => {
+    if (!lenis.current) return;
+
+    if (isLoading) {
+      lenis.current.stop();
+    } else {
+      // Reset scroll position to top before enabling
+      window.scrollTo(0, 0);
+      lenis.current.scrollTo(0, { immediate: true });
+      lenis.current.start();
+    }
+  }, [isLoading]);
 
   return lenis;
 }

@@ -14,7 +14,7 @@ import Footer from './components/Footer/Footer';
 
 export default function App() {
   const { isLoading, finishLoading } = usePreloader();
-  useLenis();
+  useLenis(isLoading);
 
   return (
     <>

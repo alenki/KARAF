@@ -9,8 +9,8 @@
   <body>
     <!-- Static preloader shown instantly before React loads -->
     <div id="static-preloader" style="position:fixed;inset:0;z-index:10000;background-color:#0A0A0B;display:flex;align-items:center;justify-content:center;"></div>
-    <style>body.is-loading{overflow:hidden;}</style>
-    <script>document.body.classList.add('is-loading');</script>
+    <style>body.is-loading,html.is-loading{overflow:hidden !important;height:100vh !important;}</style>
+    <script>document.body.classList.add('is-loading');document.documentElement.classList.add('is-loading');</script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
