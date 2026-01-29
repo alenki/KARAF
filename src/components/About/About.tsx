@@ -4,8 +4,8 @@ import ScrollReveal from '../shared/ScrollReveal';
 import styles from './About.module.css';
 
 const STATS = [
-  { value: 10, suffix: '+', label: 'Projects' },
-  { value: 3, suffix: '+', label: 'Years' },
+  { value: 15, suffix: '+', label: 'Projects' },
+  { value: 2, suffix: '+', label: 'Years' },
   { value: 4, suffix: '', label: 'Directions' },
 ];
 
