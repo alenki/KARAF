@@ -76,13 +76,41 @@
 }
 
 @media (max-width: 768px) {
+  .services {
+    padding-bottom: 6rem;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 1.5rem 0;
+  }
+
+  .card:hover {
+    padding: 1.5rem 0;
+  }
+
+  .number {
+    min-width: unset;
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-ember);
+  }
+
   .cardContent {
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0.6rem;
   }
 
   .cardTitle {
-    min-width: unset;
+    flex: unset;
+    font-size: 1.25rem;
   }
 
+  .cardDesc {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
 }

@@ -1,23 +1,10 @@
-import { useRef, useEffect, useCallback } from 'react';
+import { useRef } from 'react';
 import { useGSAP, gsap } from '../../hooks/useGSAP';
 import { services } from '../../data/services';
 import styles from './Services.module.css';
 
 export default function Services() {
   const sectionRef = useRef<HTMLElement>(null);
-  const listRef = useRef<HTMLDivElement>(null);
-
-  const lockListHeight = useCallback(() => {
-    if (!listRef.current) return;
-    listRef.current.style.height = 'auto';
-    listRef.current.style.height = `${listRef.current.scrollHeight}px`;
-  }, []);
-
-  useEffect(() => {
-    lockListHeight();
-    window.addEventListener('resize', lockListHeight);
-    return () => window.removeEventListener('resize', lockListHeight);
-  }, [lockListHeight]);
 
   useGSAP(() => {
     if (!sectionRef.current) return;
@@ -43,7 +30,7 @@ export default function Services() {
         <div className={styles.header}>
           <h2 className={styles.title}>Services</h2>
         </div>
-        <div ref={listRef} className={styles.list}>
+        <div className={styles.list}>
           {services.map((service) => (
             <div key={service.id} className={styles.card}>
               <span className={styles.number}>{service.number}</span>

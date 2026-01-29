@@ -51,6 +51,13 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 768px) {
+  .marquee {
+    padding: 1.7rem 0;
+    gap: 0.75rem;
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
