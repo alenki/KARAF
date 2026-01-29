@@ -46,12 +46,12 @@ export default function Contact() {
           <div className={styles.contactBlock}>
             <span className={styles.contactLabel}>Telegram</span>
             <a
-              href="https://t.me/karaf"
+              href="https://t.me/karafco"
               className={styles.contactValue}
               target="_blank"
               rel="noopener noreferrer"
             >
-              @karaf
+              @karafco
               <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
@@ -62,8 +62,8 @@ export default function Contact() {
         <ScrollReveal delay={0.2}>
           <div className={styles.contactBlock}>
             <span className={styles.contactLabel}>Email</span>
-            <a href="mailto:hello@karaf.ru" className={styles.contactValue}>
-              hello@karaf.ru
+            <a href="mailto:okaraf07@gmail.com" className={styles.contactValue}>
+              okaraf07@gmail.com
               <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path d="M7 17L17 7M17 7H7M17 7V17" />
               </svg>
@@ -73,10 +73,13 @@ export default function Contact() {
 
         <ScrollReveal delay={0.3}>
           <div className={styles.contactBlock}>
-            <span className={styles.contactLabel}>Location</span>
-            <span className={styles.contactValueStatic}>
-              Russia
-            </span>
+            <span className={styles.contactLabel}>Phone</span>
+            <a href="tel:+79289996640" className={styles.contactValue}>
+              +7 928 999-66-40
+              <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <path d="M7 17L17 7M17 7H7M17 7V17" />
+              </svg>
+            </a>
           </div>
         </ScrollReveal>
       </div>
@@ -104,7 +107,7 @@ export default function Contact() {
         <span className={styles.bottomTag}>Digital Craftsmanship</span>
         <div className={styles.socials}>
           <a
-            href="https://t.me/karaf"
+            href="https://t.me/karafco"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialLink}
