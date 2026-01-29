@@ -20,6 +20,7 @@
 .list {
   display: flex;
   flex-direction: column;
+  overflow: visible;
 }
 
 .card {
@@ -29,7 +30,7 @@
   padding: var(--space-md) 0;
   border-top: 1px solid var(--color-ash);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: padding 0.4s ease, margin 0.4s ease;
   position: relative;
 }
 
@@ -38,16 +39,12 @@
 }
 
 .card:hover {
-  background-color: rgba(20, 20, 22, 0.6);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-lg);
 }
 
 .card:hover .number {
   color: var(--color-ember);
-}
-
-.card:hover .arrow {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .number {
@@ -61,7 +58,7 @@
 .cardContent {
   flex: 1;
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: var(--space-lg);
 }
 
@@ -80,14 +77,6 @@
   max-width: 500px;
 }
 
-.arrow {
-  color: var(--color-smoke);
-  opacity: 0;
-  transform: translateX(-10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  flex-shrink: 0;
-}
-
 @media (max-width: 768px) {
   .cardContent {
     flex-direction: column;
@@ -98,7 +87,4 @@
     min-width: unset;
   }
 
-  .arrow {
-    display: none;
-  }
 }
