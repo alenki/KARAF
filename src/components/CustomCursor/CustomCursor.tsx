@@ -46,6 +46,14 @@ export default function CustomCursor() {
       inner.classList.remove(styles.hidden);
     };
 
+    const onMouseDown = () => {
+      inner.classList.add(styles.pressing);
+    };
+
+    const onMouseUp = () => {
+      inner.classList.remove(styles.pressing);
+    };
+
     const loop = () => {
       outerX += (mouseX - outerX) * 0.12;
       outerY += (mouseY - outerY) * 0.12;
@@ -58,6 +66,8 @@ export default function CustomCursor() {
     };
 
     document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mouseup', onMouseUp);
 
     // Attach hover handlers to links and project cards
     const attachHandlers = () => {
@@ -80,6 +90,8 @@ export default function CustomCursor() {
 
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
+      document.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('mouseup', onMouseUp);
       observer.disconnect();
       cancelAnimationFrame(rafId);
     };
