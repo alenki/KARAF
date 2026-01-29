@@ -47,7 +47,7 @@ export default function Projects() {
       {isMobile ? (
         <div className={styles.mobileGrid}>
           {projects.map((project) => (
-            <div key={project.id} className={styles.mobileCard} data-cursor="project">
+            <a key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className={styles.mobileCard} data-cursor="project">
               <div className={styles.imageWrapper}>
                 <img
                   src={project.image}
@@ -63,14 +63,14 @@ export default function Projects() {
                 <h3 className={styles.cardName}>{project.name}</h3>
                 <span className={styles.cardCategory}>{project.category}</span>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       ) : (
         <>
           <div ref={trackRef} className={styles.track}>
             {projects.map((project) => (
-              <div key={project.id} className={styles.card} data-cursor="project">
+              <a key={project.id} href={project.link} target="_blank" rel="noopener noreferrer" className={styles.card} data-cursor="project">
                 <div className={styles.imageWrapper}>
                   <img
                     src={project.image}
@@ -86,7 +86,7 @@ export default function Projects() {
                   <h3 className={styles.cardName}>{project.name}</h3>
                   <span className={styles.cardCategory}>{project.category}</span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
           <div className={styles.progressTrack}>
