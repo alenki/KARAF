@@ -1,12 +1,13 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState, useEffect, useCallback } from 'react';
 import gsap from 'gsap';
 import { useIsMobile } from '../../hooks/useMediaQuery';
+import { getLenis } from '../../hooks/useLenis';
 import styles from './Navigation.module.css';
 
 const NAV_LINKS = [
-  { label: 'Work', href: '#projects' },
-  { label: 'Services', href: '#services' },
   { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Work', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -56,9 +57,18 @@ export default function Navigation() {
     }
   }, [menuOpen]);
 
-  const handleLinkClick = () => {
+  const handleLinkClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href');
+    if (!href) return;
     setMenuOpen(false);
-  };
+    const lenis = getLenis();
+    if (lenis) {
+      lenis.scrollTo(href, { duration: 1.2 });
+    } else {
+      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, []);
 
   return (
     <>
@@ -82,7 +92,7 @@ export default function Navigation() {
         ) : (
           <div className={styles.links}>
             {NAV_LINKS.map((link) => (
-              <a key={link.href} href={link.href} className={styles.link}>
+              <a key={link.href} href={link.href} className={styles.link} onClick={handleLinkClick}>
                 {link.label}
               </a>
             ))}
