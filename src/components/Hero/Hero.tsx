@@ -58,7 +58,10 @@ export default function Hero({ ready }: HeroProps) {
           ))}
         </h1>
         <p ref={subtitleRef} className={styles.subtitle}>
-          Цифровое агентство — Веб / Мобайл / ИИ / Боты
+          <span>Цифровое агентство</span>
+          <span className={styles.dash}> — </span>
+          <br className={styles.mobileBreak} />
+          <span>Веб / Мобайл / ИИ / Боты</span>
         </p>
       </div>
 

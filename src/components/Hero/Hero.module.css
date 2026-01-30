@@ -67,6 +67,24 @@
   transform: translateY(30px);
 }
 
+.mobileBreak {
+  display: none;
+}
+
+.dash {
+  display: inline;
+}
+
+@media (max-width: 768px) {
+  .mobileBreak {
+    display: block;
+  }
+
+  .dash {
+    display: none;
+  }
+}
+
 .scrollIndicator {
   position: absolute;
   bottom: 2.5rem;
