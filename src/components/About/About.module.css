@@ -48,6 +48,11 @@
 }
 
 @media (max-width: 768px) {
+  .manifesto {
+    font-size: clamp(1.25rem, 5vw, 1.6rem);
+    line-height: 1.35;
+  }
+
   .stats {
     flex-direction: column;
     align-items: center;
