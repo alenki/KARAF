@@ -28,7 +28,7 @@ export default function Services() {
     <section ref={sectionRef} id="services" className={styles.services}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <h2 className={styles.title}>Services</h2>
+          <h2 className={styles.title}>Услуги</h2>
         </div>
         <div className={styles.list}>
           {services.map((service) => (

@@ -58,13 +58,13 @@ export default function Hero({ ready }: HeroProps) {
           ))}
         </h1>
         <p ref={subtitleRef} className={styles.subtitle}>
-          Digital Agency — Web / Mobile / AI / Bots
+          Цифровое агентство — Веб / Мобайл / ИИ / Боты
         </p>
       </div>
 
       <div ref={scrollRef} className={styles.scrollIndicator}>
         <div className={styles.scrollLine} />
-        <span className={styles.scrollText}>Scroll</span>
+        <span className={styles.scrollText}>Листайте</span>
       </div>
     </section>
   );

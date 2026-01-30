@@ -4,9 +4,9 @@ import ScrollReveal from '../shared/ScrollReveal';
 import styles from './About.module.css';
 
 const STATS = [
-  { value: 15, suffix: '+', label: 'Projects' },
-  { value: 2, suffix: '+', label: 'Years' },
-  { value: 4, suffix: '', label: 'Directions' },
+  { value: 15, suffix: '+', label: 'Проектов' },
+  { value: 2, suffix: '+', label: 'Года' },
+  { value: 4, suffix: '', label: 'Направления' },
 ];
 
 export default function About() {
@@ -42,7 +42,7 @@ export default function About() {
       <div className={styles.container}>
         <ScrollReveal>
           <p className={styles.manifesto}>
-            Digital agency based in Russia, we design and build products where strategy, engineering, and artificial intelligence compound as one integrated practice.
+            Цифровое агентство из России — мы проектируем и создаём продукты, в которых стратегия, инженерия и искусственный интеллект работают как единое целое.
           </p>
         </ScrollReveal>
 

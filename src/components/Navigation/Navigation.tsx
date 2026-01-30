@@ -5,10 +5,10 @@ import { getLenis } from '../../hooks/useLenis';
 import styles from './Navigation.module.css';
 
 const NAV_LINKS = [
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'О нас', href: '#about' },
+  { label: 'Услуги', href: '#services' },
+  { label: 'Проекты', href: '#projects' },
+  { label: 'Контакты', href: '#contact' },
 ];
 
 export default function Navigation() {

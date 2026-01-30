@@ -14,15 +14,15 @@ export default function Projects() {
     if (isMobile || !sectionRef.current || !trackRef.current) return;
 
     const track = trackRef.current;
-    const totalScroll = track.scrollWidth - window.innerWidth;
+    const getScrollDistance = () => track.scrollWidth - window.innerWidth;
 
     gsap.to(track, {
-      x: -totalScroll,
+      x: () => -getScrollDistance(),
       ease: 'none',
       scrollTrigger: {
         trigger: sectionRef.current,
         start: 'top top',
-        end: () => `+=${totalScroll}`,
+        end: () => `+=${getScrollDistance()}`,
         pin: true,
         scrub: 1,
         invalidateOnRefresh: true,
@@ -33,14 +33,34 @@ export default function Projects() {
         },
       },
     });
+
+    // Refresh after images load to ensure correct scroll distance
+    const images = track.querySelectorAll('img');
+    let loaded = 0;
+    const total = images.length;
+    if (total > 0) {
+      images.forEach((img) => {
+        if (img.complete) {
+          loaded++;
+        } else {
+          img.addEventListener('load', () => {
+            loaded++;
+            if (loaded === total) ScrollTrigger.refresh();
+          }, { once: true });
+        }
+      });
+      if (loaded === total) {
+        requestAnimationFrame(() => ScrollTrigger.refresh());
+      }
+    }
   }, [isMobile]);
 
   return (
     <section ref={sectionRef} id="projects" className={styles.projects}>
       <div className={styles.header}>
-        <h2 className={styles.title}>Selected Work</h2>
+        <h2 className={styles.title}>Наши работы</h2>
         <span className={styles.count}>
-          {String(projects.length).padStart(2, '0')} Projects
+          {String(projects.length).padStart(2, '0')} Проектов
         </span>
       </div>
 
