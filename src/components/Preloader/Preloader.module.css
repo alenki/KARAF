@@ -16,22 +16,6 @@
   align-items: center;
 }
 
-.title {
-  position: absolute;
-  bottom: calc(100% + 3rem);
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: 8vw;
-  color: var(--color-cream);
-  display: flex;
-  gap: 0.02em;
-}
-
-.letter {
-  display: inline-block;
-  will-change: clip-path;
-}
-
 .progress {
   display: flex;
   align-items: center;
