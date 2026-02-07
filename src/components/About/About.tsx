@@ -42,7 +42,7 @@ export default function About() {
       <div className={styles.container}>
         <ScrollReveal>
           <p className={styles.manifesto}>
-            A digital agency from Russia — we design and build products where strategy, engineering, and artificial intelligence work as one.
+            We design and build products where strategy, engineering, and artificial intelligence work as one.
           </p>
         </ScrollReveal>
 
