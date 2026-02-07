@@ -58,9 +58,9 @@ export default function Projects() {
   return (
     <section ref={sectionRef} id="projects" className={styles.projects}>
       <div className={styles.header}>
-        <h2 className={styles.title}>Наши работы</h2>
+        <h2 className={styles.title}>Our Work</h2>
         <span className={styles.count}>
-          {String(projects.length).padStart(2, '0')} Проектов
+          {String(projects.length).padStart(2, '0')} Projects
         </span>
       </div>
 

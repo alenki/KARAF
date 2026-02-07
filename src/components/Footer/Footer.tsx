@@ -7,10 +7,10 @@ export default function Footer() {
         <span className={styles.copyright}>
           &copy; {new Date().getFullYear()} KARAF
         </span>
-        <span className={styles.location}>Россия</span>
+        <span className={styles.location}>Russia</span>
         <div className={styles.socials}>
           <a href="https://t.me/karaf" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-            Телеграм
+            Telegram
           </a>
         </div>
       </div>

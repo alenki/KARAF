@@ -9,25 +9,25 @@ export const services: Service[] = [
   {
     id: 1,
     number: '01',
-    title: 'Веб-разработка',
-    description: 'Высокопроизводительные сайты и веб-приложения на современных фреймворках. От лендингов до сложных платформ.',
+    title: 'Web Development',
+    description: 'High-performance websites and web applications built on modern frameworks. From landing pages to complex platforms.',
   },
   {
     id: 2,
     number: '02',
-    title: 'Мобильная разработка',
-    description: 'Нативные и кроссплатформенные мобильные приложения для iOS и Android. Безупречный опыт на всех устройствах.',
+    title: 'Mobile Development',
+    description: 'Native and cross-platform mobile apps for iOS and Android. Seamless experience across all devices.',
   },
   {
     id: 3,
     number: '03',
-    title: 'ИИ-решения',
-    description: 'Интеграция ИИ, чат-боты и интеллектуальная автоматизация. Передовые технологии машинного обучения.',
+    title: 'AI Solutions',
+    description: 'AI integration, chatbots, and intelligent automation. Cutting-edge machine learning technologies.',
   },
   {
     id: 4,
     number: '04',
-    title: 'Telegram-боты',
-    description: 'Функциональные Telegram-боты для автоматизации бизнеса, взаимодействия с клиентами и управления сообществами.',
+    title: 'Telegram Bots',
+    description: 'Feature-rich Telegram bots for business automation, customer engagement, and community management.',
   },
 ];

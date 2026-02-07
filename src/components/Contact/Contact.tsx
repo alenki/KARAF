@@ -43,7 +43,7 @@ export default function Contact() {
       <div className={styles.headlineRow}>
         <ScrollReveal>
           <h2 className={styles.title}>
-            Давайте создадим<br />нечто выдающееся.
+            Let's create<br />something remarkable.
           </h2>
         </ScrollReveal>
       </div>
@@ -57,7 +57,7 @@ export default function Contact() {
       <div className={styles.contactGrid}>
         <ScrollReveal delay={0.1}>
           <div className={styles.contactBlock}>
-            <span className={styles.contactLabel}>Телеграм</span>
+            <span className={styles.contactLabel}>Telegram</span>
             <a
               href="https://t.me/karafco"
               className={styles.contactValue}
@@ -74,7 +74,7 @@ export default function Contact() {
 
         <ScrollReveal delay={0.2}>
           <div className={styles.contactBlock}>
-            <span className={styles.contactLabel}>Почта</span>
+            <span className={styles.contactLabel}>Email</span>
             <a href="mailto:okaraf07@gmail.com" className={styles.contactValue}>
               okaraf07@gmail.com
               <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -86,7 +86,7 @@ export default function Contact() {
 
         <ScrollReveal delay={0.3}>
           <div className={styles.contactBlock}>
-            <span className={styles.contactLabel}>Телефон</span>
+            <span className={styles.contactLabel}>Phone</span>
             <a href="tel:+79289996640" className={styles.contactValue}>
               +7 928 999-66-40
               <svg className={styles.arrow} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -106,10 +106,10 @@ export default function Contact() {
 
       {/* ── Nav row ── */}
       <nav className={styles.navRow}>
-        <a href="#about" className={styles.navLink} onClick={handleNavClick}>О нас</a>
-        <a href="#services" className={styles.navLink} onClick={handleNavClick}>Услуги</a>
-        <a href="#projects" className={styles.navLink} onClick={handleNavClick}>Проекты</a>
-        <a href="#contact" className={styles.navLink} onClick={handleNavClick}>Контакты</a>
+        <a href="#about" className={styles.navLink} onClick={handleNavClick}>About</a>
+        <a href="#services" className={styles.navLink} onClick={handleNavClick}>Services</a>
+        <a href="#projects" className={styles.navLink} onClick={handleNavClick}>Projects</a>
+        <a href="#contact" className={styles.navLink} onClick={handleNavClick}>Contact</a>
       </nav>
 
       {/* ── Bottom bar ── */}
@@ -117,7 +117,7 @@ export default function Contact() {
         <span className={styles.copyright}>
           &copy; {new Date().getFullYear()} KARAF
         </span>
-        <span className={styles.bottomTag}>Цифровое мастерство</span>
+        <span className={styles.bottomTag}>Digital Craftsmanship</span>
         <div className={styles.socials}>
           <a
             href="https://t.me/karafco"
@@ -125,7 +125,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             className={styles.socialLink}
           >
-            Телеграм&ensp;&rsaquo;
+            Telegram&ensp;&rsaquo;
           </a>
         </div>
       </div>
