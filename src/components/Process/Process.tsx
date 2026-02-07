@@ -5,27 +5,27 @@ import styles from './Process.module.css';
 const STEPS = [
   {
     number: '01',
-    title: 'Discovery',
+    title: 'Исследование',
     description:
-      'We analyze your business goals, audience, and market to define the project scope and strategy.',
+      'Анализируем цели бизнеса, аудиторию и рынок, чтобы определить объём и стратегию проекта.',
   },
   {
     number: '02',
-    title: 'Design',
+    title: 'Дизайн',
     description:
-      'Wireframes, prototypes, and visual design — crafting every interaction with purpose and precision.',
+      'Вайрфреймы, прототипы и визуальный дизайн — каждое взаимодействие продумано до мелочей.',
   },
   {
     number: '03',
-    title: 'Development',
+    title: 'Разработка',
     description:
-      'Clean, performant code built with modern technologies. Rigorous testing at every stage.',
+      'Чистый и производительный код на современных технологиях. Тщательное тестирование на каждом этапе.',
   },
   {
     number: '04',
-    title: 'Launch',
+    title: 'Запуск',
     description:
-      'Deployment, optimization, and ongoing support to ensure your product thrives in the wild.',
+      'Деплой, оптимизация и постоянная поддержка — чтобы ваш продукт уверенно работал.',
   },
 ];
 
@@ -74,7 +74,7 @@ export default function Process() {
   return (
     <section ref={sectionRef} className={styles.process}>
       <div className={styles.container}>
-        <h2 className={styles.title}>How We Work</h2>
+        <h2 className={styles.title}>Как мы работаем</h2>
 
         <div className={styles.timeline}>
           <svg className={styles.line} viewBox="0 0 2 400" preserveAspectRatio="none">

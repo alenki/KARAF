@@ -46,6 +46,7 @@
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--color-cream);
+  text-transform: uppercase;
   transition: color 0.3s ease;
   position: relative;
 }
