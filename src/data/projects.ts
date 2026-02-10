@@ -11,7 +11,6 @@ export const projects: Project[] = [
   { id: 1, image: '/projects/balancecoffee.webp', name: 'BALANCE COFFEE', category: 'Кафе · Концепт', description: 'Концептуальный сайт для кофейни', link: 'https://balance-coffee.ru' },
   { id: 2, image: '/projects/galereya.webp', name: 'Галерея', category: 'Торговый центр', description: 'Официальный сайт торгового центра', link: 'https://galereya-trc.ru' },
   { id: 3, image: '/projects/masterauto.webp', name: 'МастерАвто', category: 'Автосервис', description: 'Официальный сайт автосервиса', link: 'https://masterauto-07.ru' },
-  { id: 4, image: '/projects/chocodips.webp', name: 'ChocoDips', category: 'Кафе · Концепт', description: 'Концептуальный сайт для кафе', link: 'https://choco-dips.ru' },
   { id: 5, image: '/projects/history.webp', name: 'History', category: 'Ресторан · Концепт', description: 'Концептуальный сайт для ресторана', link: 'https://history-nalchik.ru' },
   { id: 6, image: '/projects/okaraf.webp', name: 'OKARAF', category: 'Портфолио', description: 'Официальный сайт-портфолио', link: 'https://okaraf.ru' },
   { id: 7, image: '/projects/mozaika.webp', name: 'Мозаика', category: 'Образование', description: 'Образовательная платформа', link: 'https://mozaika.netlify.app' },
