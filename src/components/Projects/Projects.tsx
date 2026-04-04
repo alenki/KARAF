@@ -96,7 +96,6 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.name}
-                    loading="lazy"
                     decoding="async"
                     className={styles.image}
                   />
