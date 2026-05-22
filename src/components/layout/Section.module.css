@@ -1,0 +1,49 @@
+.section {
+  padding-top: var(--section-pad-y);
+  padding-bottom: var(--section-pad-y);
+}
+
+.flush {
+  padding-top: 0;
+}
+
+.dark {
+  background: var(--footer-band);
+  color: var(--primary-foreground);
+}
+
+.dark :global(em) {
+  color: rgba(250, 250, 250, 0.55);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-bottom: 56px;
+  max-width: 880px;
+}
+
+.heading {
+  margin: 0;
+  color: inherit;
+}
+
+.lede {
+  color: var(--muted-foreground);
+  max-width: 640px;
+}
+
+.dark .lede {
+  color: rgba(250, 250, 250, 0.55);
+}
+
+.body {
+  position: relative;
+}
+
+@media (max-width: 720px) {
+  .head {
+    margin-bottom: 36px;
+  }
+}

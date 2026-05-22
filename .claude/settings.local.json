@@ -20,7 +20,10 @@
       "Bash(dir:*)",
       "Bash(node scripts/optimize-images.mjs:*)",
       "Bash(node -e:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(Get-ChildItem -Path \"E:\\\\Desktop\\\\PC\\\\WORK\\\\Web Development\\\\KARAF\" -Force)",
+      "Bash(Select-Object Name)",
+      "WebFetch(domain:leftcoast.refractweb.com)"
     ]
   }
 }

@@ -1,0 +1,81 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 520px;
+  align-items: stretch;
+}
+
+.form button {
+  align-self: flex-start;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 15px;
+  transition: border-color var(--dur-fast) var(--ease-out);
+  resize: vertical;
+  font-family: inherit;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--ring);
+}
+
+.lines {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.line a {
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border);
+  transition: border-color var(--dur-fast) var(--ease-out);
+  display: inline-block;
+}
+
+.line a:hover {
+  border-bottom-color: var(--foreground);
+}
+
+.thanks {
+  color: var(--muted-foreground);
+  font-size: 13px;
+}
+
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

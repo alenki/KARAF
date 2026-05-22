@@ -1,45 +1,46 @@
-import { useRef } from 'react';
-import { useGSAP, gsap } from '../../hooks/useGSAP';
+import { useEffect, useRef, type ReactNode } from 'react';
 import styles from './ScrollReveal.module.css';
 
-interface ScrollRevealProps {
-  children: React.ReactNode;
-  className?: string;
+type Props = {
+  children: ReactNode;
   delay?: number;
-  y?: number;
-  duration?: number;
-  stagger?: number;
-}
+  className?: string;
+  as?: 'div' | 'section' | 'article' | 'header';
+};
 
-export default function ScrollReveal({
-  children,
-  className = '',
-  delay = 0,
-  y = 60,
-  duration = 1,
-}: ScrollRevealProps) {
+export function ScrollReveal({ children, delay = 0, className = '', as: Tag = 'div' }: Props) {
   const ref = useRef<HTMLDivElement>(null);
 
-  useGSAP(() => {
-    if (!ref.current) return;
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
 
-    gsap.from(ref.current, {
-      y,
-      opacity: 0,
-      duration,
-      delay,
-      ease: 'power3.out',
-      scrollTrigger: {
-        trigger: ref.current,
-        start: 'top 85%',
-        toggleActions: 'play none none none',
+    // Default state: visible (so screenshots & no-JS environments render correctly).
+    // Only hide + animate when IntersectionObserver is available.
+    if (!('IntersectionObserver' in window)) return;
+
+    el.classList.add(styles.pending);
+    el.style.transitionDelay = `${delay}s`;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            el.classList.add(styles.revealed);
+            io.unobserve(el);
+          }
+        }
       },
-    });
-  }, [], ref);
+      { rootMargin: '0px 0px -10% 0px', threshold: 0.05 },
+    );
+
+    io.observe(el);
+    return () => io.disconnect();
+  }, [delay]);
 
   return (
-    <div ref={ref} className={`${styles.wrapper} ${className}`}>
+    <Tag ref={ref as React.RefObject<HTMLDivElement>} className={`${styles.reveal} ${className}`}>
       {children}
-    </div>
+    </Tag>
   );
 }

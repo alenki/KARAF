@@ -1,0 +1,19 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 48px;
+}
+
+.item {
+  list-style: none;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}

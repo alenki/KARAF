@@ -1,15 +1,33 @@
-import { useLenis } from './hooks/useLenis';
+import { lazy, Suspense, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { Header } from './components/layout/Header';
+import { Footer } from './components/layout/Footer';
+import { Preloader } from './components/chrome/Preloader';
+import { CustomCursor } from './components/chrome/CustomCursor';
+import { RouteTransition } from './components/layout/RouteTransition';
+import { useLenis, getLenis } from './hooks/useLenis';
 import { usePreloader } from './hooks/usePreloader';
-import Preloader from './components/Preloader/Preloader';
-import CustomCursor from './components/CustomCursor/CustomCursor';
-import Navigation from './components/Navigation/Navigation';
-import Hero from './components/Hero/Hero';
-import About from './components/About/About';
-import Services from './components/Services/Services';
-import Projects from './components/Projects/Projects';
-import Process from './components/Process/Process';
-import TechMarquee from './components/TechMarquee/TechMarquee';
-import Contact from './components/Contact/Contact';
+
+const Home = lazy(() => import('./routes/Home'));
+const Works = lazy(() => import('./routes/Works'));
+const WorkDetail = lazy(() => import('./routes/WorkDetail'));
+const About = lazy(() => import('./routes/About'));
+const Contact = lazy(() => import('./routes/Contact'));
+const NotFound = lazy(() => import('./routes/NotFound'));
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    const lenis = getLenis();
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   const { isLoading, finishLoading } = usePreloader();
   useLenis(isLoading);
@@ -18,16 +36,23 @@ export default function App() {
     <>
       {isLoading && <Preloader onComplete={finishLoading} />}
       <CustomCursor />
-      <Navigation />
+      <ScrollToTop />
+      <Header />
       <main>
-        <Hero ready={!isLoading} />
-        <About />
-        <Services />
-        <Projects />
-        <Process />
-        <TechMarquee />
-        <Contact />
+        <Suspense fallback={<div style={{ minHeight: '60vh' }} />}>
+          <RouteTransition>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/works" element={<Works />} />
+              <Route path="/works/:slug" element={<WorkDetail />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </RouteTransition>
+        </Suspense>
       </main>
+      <Footer />
     </>
   );
 }

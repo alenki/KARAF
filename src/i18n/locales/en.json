@@ -1,0 +1,132 @@
+{
+  "brand": {
+    "name": "KARAF",
+    "tagline": "Digital studio"
+  },
+  "nav": {
+    "home": "Home",
+    "works": "Works",
+    "about": "Studio",
+    "contact": "Contact",
+    "cta": "Start a project"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Digital studio · since 2023",
+      "headline": "Products that <em>work</em> on reputation.",
+      "lede": "Web, mobile, AI, and Telegram bots for brands that care about every detail.",
+      "scroll": "Scroll"
+    },
+    "featured": {
+      "eyebrow": "Featured works",
+      "heading": "Recent <em>launches</em>.",
+      "viewAll": "View all works"
+    },
+    "studio": {
+      "eyebrow": "Studio",
+      "heading": "Engineers and designers working as <em>one team</em>.",
+      "lede": "We build digital products from strategy to release. One contract, one team, one accountability.",
+      "cta": "About the studio"
+    },
+    "services": {
+      "eyebrow": "Services",
+      "heading": "What we <em>do</em>."
+    },
+    "process": {
+      "eyebrow": "Process",
+      "heading": "How the <em>work</em> moves."
+    },
+    "metrics": {
+      "eyebrow": "Numbers",
+      "heading": "Quiet <em>expertise</em>."
+    },
+    "tech": {
+      "eyebrow": "Stack"
+    },
+    "cta": {
+      "heading": "Ready to build something meaningful?",
+      "button": "Get in touch"
+    }
+  },
+  "works": {
+    "eyebrow": "Works",
+    "heading": "A catalogue of <em>launches</em>.",
+    "lede": "A selection of recent studio projects — from concept work to production releases.",
+    "filters": {
+      "all": "All",
+      "web": "Web",
+      "mobile": "Mobile",
+      "ai": "AI",
+      "bot": "Bots"
+    }
+  },
+  "workDetail": {
+    "summary": "Summary",
+    "role": "Role",
+    "year": "Year",
+    "category": "Category",
+    "stack": "Stack",
+    "live": "Visit live site",
+    "next": "Next project",
+    "prev": "Previous"
+  },
+  "about": {
+    "eyebrow": "Studio",
+    "heading": "Engineering as <em>discipline</em>.",
+    "lede": "KARAF is a digital studio working with brands that have no margin for compromise. Web, mobile, AI, and Telegram bots — under one roof."
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "heading": "Start a <em>conversation</em>.",
+    "lede": "Describe the brief — we'll respond within one business day.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "send": "Send"
+    },
+    "lines": {
+      "email": "hello@karaf.studio",
+      "telegram": "Telegram"
+    }
+  },
+  "services": {
+    "web": {
+      "title": "Web development",
+      "description": "High-performance sites and web apps on modern frameworks. Landing pages to complex platforms."
+    },
+    "mobile": {
+      "title": "Mobile development",
+      "description": "Native and cross-platform apps for iOS and Android. Faithful experience across every device."
+    },
+    "ai": {
+      "title": "AI solutions",
+      "description": "AI integration, chat bots, and intelligent automation. Modern machine learning, delivered."
+    },
+    "bot": {
+      "title": "Telegram bots",
+      "description": "Functional Telegram bots for business automation, customer interaction, and community ops."
+    }
+  },
+  "process": {
+    "discover": { "title": "Discover", "description": "We study the brief — audience, goals, constraints." },
+    "design": { "title": "Design", "description": "Scenarios, prototypes, the visual system." },
+    "build": { "title": "Build", "description": "Engineering and integration, daily demos." },
+    "ship": { "title": "Ship", "description": "Launch, measure, iterate." }
+  },
+  "metrics": {
+    "years": "years in market",
+    "projects": "projects shipped",
+    "stack": "active technologies"
+  },
+  "categories": {
+    "web": "Web",
+    "mobile": "Mobile",
+    "ai": "AI",
+    "bot": "Bot"
+  },
+  "lang": {
+    "ru": "RU",
+    "en": "EN"
+  }
+}

@@ -1,0 +1,92 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in oklab, var(--muted) 75%, transparent);
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  transition: box-shadow var(--dur) var(--ease-out), background-color var(--dur) var(--ease-out);
+}
+
+.scrolled {
+  background: color-mix(in oklab, var(--background) 88%, transparent);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  height: var(--header-h);
+  gap: 32px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mark {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  color: var(--foreground);
+}
+
+.markDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--foreground);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  justify-self: center;
+}
+
+.link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted-foreground);
+  transition: color var(--dur-fast) var(--ease-out);
+  position: relative;
+  padding: 6px 0;
+}
+
+.link:hover {
+  color: var(--foreground);
+}
+
+.active {
+  color: var(--foreground);
+}
+
+.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--foreground);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+@media (max-width: 720px) {
+  .inner {
+    grid-template-columns: auto auto;
+    gap: 16px;
+  }
+
+  .nav {
+    display: none;
+  }
+}

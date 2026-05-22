@@ -1,0 +1,31 @@
+.dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--foreground);
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  transition: width var(--dur-fast) var(--ease-out),
+    height var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) var(--ease-out);
+  will-change: transform;
+}
+
+.hover {
+  width: 32px;
+  height: 32px;
+  margin-left: -12px;
+  margin-top: -12px;
+  background: transparent;
+  border: 1px solid var(--foreground);
+}
+
+@media (max-width: 768px), (pointer: coarse) {
+  .dot {
+    display: none;
+  }
+}

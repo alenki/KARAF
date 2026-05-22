@@ -1,0 +1,14 @@
+.shell {
+  transition: opacity 220ms var(--ease-out), transform 220ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.out {
+  opacity: 0;
+  transform: translateY(8px);
+}

@@ -1,0 +1,82 @@
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 96px;
+  list-style: none;
+}
+
+.item {
+  list-style: none;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 40px;
+  align-items: start;
+  color: var(--foreground);
+  position: relative;
+}
+
+.num {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--muted-foreground);
+  padding-top: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  transition: color var(--dur-fast) var(--ease-out);
+  margin: 0;
+}
+
+.card:hover .name {
+  color: var(--muted-foreground);
+}
+
+.foot {
+  margin-top: 80px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.viewAll {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 6px;
+  transition: border-color var(--dur-fast) var(--ease-out), gap var(--dur-fast) var(--ease-out);
+}
+
+.viewAll:hover {
+  border-bottom-color: var(--foreground);
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .num {
+    padding-top: 0;
+  }
+}

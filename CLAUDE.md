@@ -21,11 +21,21 @@ Standard Vite + React SPA. Entry point is `index.html` → `src/main.tsx` → `s
 
 TypeScript strict mode is on with `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch`, and `erasableSyntaxOnly` enforced. Two tsconfig files: `tsconfig.app.json` (src code, ES2022 target) and `tsconfig.node.json` (build tooling, ES2023 target).
 
-## Frontend Design Guidelines
+## Active Design System
 
-Avoid generic "AI slop" aesthetics. Key principles:
-- **Typography**: Use distinctive, beautiful fonts — avoid Inter, Roboto, Arial, Space Grotesk, and other overused defaults
-- **Color**: Commit to a cohesive theme with dominant colors and sharp accents. Use CSS variables. Draw from IDE themes and cultural aesthetics
-- **Motion**: Prefer CSS-only animations. Use Motion library for React when available. Focus on high-impact moments like orchestrated page loads with staggered reveals
-- **Backgrounds**: Create depth with layered gradients, geometric patterns, or contextual effects — not flat solid colors
-- **Avoid**: purple-gradient-on-white clichés, predictable layouts, cookie-cutter components. Vary between light/dark themes and make unexpected creative choices
+The site is being rebuilt against a deliberate brand system (see plan at `C:\Users\omarh\.claude\plans\i-want-to-clean-tranquil-riddle.md`):
+
+- **Surface**: Light canvas (`#FFFFFF` background, `#0A0A0A` foreground). The only dark surface is the footer gradient band (`#18181B → #0A0A0A`).
+- **Palette**: Monochrome only — Neutral / Zinc scale, no chromatic accents. Photography supplies all colour.
+- **Typography**: **Inter Tight** is the single typeface for the entire site (loaded via `@fontsource-variable/inter-tight`). Rhythm comes from scale + weight contrast (400 / 500 / 600). Italic accents drop to weight 400 and `var(--muted-foreground)`.
+- **Geometry**: 10px base radius, 1px `var(--border)` hairlines, no drop shadows, no gradients except the footer.
+- **Motion**: GSAP + Lenis. Restrained — one orchestrated hero reveal per route; gentle fades on scroll; no parallax on imagery.
+- **Routing**: React Router v6+ with multi-page architecture: `/`, `/works`, `/works/:slug`, `/about`, `/contact`. Lazy-loaded routes.
+- **i18n**: Bilingual RU/EN via `react-i18next` (`src/i18n/`). UI strings in `locales/{ru,en}.json`; per-project copy inline in `src/data/projects.ts` under `{ ru, en }`.
+
+### Font policy
+- **Inter Tight is the approved typeface** for this project — the brandbook specifies it explicitly. Plain `Inter`, Roboto, Arial, and Space Grotesk remain banned.
+- Do not introduce a serif display, monospace, or secondary sans pairing without explicit approval.
+
+### General creative principles
+Still applies for any work outside the active brand system — avoid converging toward "on-distribution" outputs, cookie-cutter components, the purple-gradient-on-white cliché, and predictable layouts. The brand discipline is "chrome stays out of the way of the work."

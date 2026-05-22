@@ -4,13 +4,20 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KARAF</title>
+    <meta name="description" content="KARAF — digital studio. Web, mobile, AI, and Telegram bots." />
+    <title>KARAF · Digital Studio</title>
+    <style>
+      html.is-loading, body.is-loading {
+        overflow: hidden !important;
+        height: 100vh !important;
+      }
+    </style>
+    <script>
+      document.body && document.body.classList.add('is-loading');
+      document.documentElement.classList.add('is-loading');
+    </script>
   </head>
   <body>
-    <!-- Static preloader shown instantly before React loads -->
-    <div id="static-preloader" style="position:fixed;inset:0;z-index:10000;background-color:#0A0A0B;display:flex;align-items:center;justify-content:center;"></div>
-    <style>body.is-loading,html.is-loading{overflow:hidden !important;height:100vh !important;}</style>
-    <script>document.body.classList.add('is-loading');document.documentElement.classList.add('is-loading');</script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

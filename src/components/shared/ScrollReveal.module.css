@@ -1,3 +1,23 @@
-.wrapper {
-  will-change: transform, opacity;
+.reveal {
+  /* default state: fully visible — IntersectionObserver opt-in animates from .pending */
+}
+
+.pending {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms var(--ease-out), transform 700ms var(--ease-out);
+  will-change: opacity, transform;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pending {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

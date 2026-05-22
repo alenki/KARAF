@@ -1,0 +1,60 @@
+.hero {
+  padding-top: clamp(80px, 12vw, 160px);
+  padding-bottom: clamp(80px, 12vw, 160px);
+  min-height: calc(100vh - var(--header-h));
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.headline {
+  margin: 0;
+  max-width: 18ch;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: heroIn 900ms var(--ease-out) 0.1s forwards;
+}
+
+.lede {
+  color: var(--muted-foreground);
+  max-width: 56ch;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: heroIn 900ms var(--ease-out) 0.35s forwards;
+}
+
+.scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+  opacity: 0;
+  animation: fadeIn 900ms var(--ease-out) 0.55s forwards;
+}
+
+.cue {
+  display: inline-block;
+  width: 1px;
+  height: 28px;
+  background: var(--foreground);
+  transform-origin: top;
+  animation: scrollCue 2.4s var(--ease-in-out) infinite;
+}
+
+@keyframes heroIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scrollCue {
+  0%, 100% { transform: scaleY(1); opacity: 1; }
+  50% { transform: scaleY(0.4); opacity: 0.4; }
+}

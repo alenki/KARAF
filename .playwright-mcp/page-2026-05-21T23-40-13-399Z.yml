@@ -1,0 +1,63 @@
+- generic [ref=e2]:
+  - generic [ref=e4]: KARAF
+  - banner [ref=e6]:
+    - generic [ref=e7]:
+      - link "KARAF home" [ref=e8] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e10]: KARAF
+      - navigation "Primary" [ref=e11]:
+        - link "Home" [ref=e12] [cursor=pointer]:
+          - /url: /
+        - link "Works" [ref=e13] [cursor=pointer]:
+          - /url: /works
+        - link "Studio" [ref=e14] [cursor=pointer]:
+          - /url: /about
+        - link "Contact" [ref=e15] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e16]:
+        - group "Language" [ref=e17]:
+          - button "RU" [ref=e18] [cursor=pointer]
+          - generic [ref=e19]: /
+          - button "EN" [pressed] [ref=e20] [cursor=pointer]
+        - link "Start a project" [ref=e21] [cursor=pointer]:
+          - /url: /contact
+    - separator [ref=e22]
+  - main [ref=e23]
+  - contentinfo [ref=e25]:
+    - generic [ref=e26]:
+      - heading "Ready to build something meaningful?" [level=2] [ref=e27]
+      - link "Get in touch" [ref=e28] [cursor=pointer]:
+        - /url: /contact
+        - generic [ref=e29]: Get in touch
+        - generic [ref=e30]: ↗
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - generic [ref=e33]: KARAF
+        - paragraph [ref=e34]: Digital studio
+      - generic [ref=e35]:
+        - generic [ref=e36]: Navigation
+        - list [ref=e37]:
+          - listitem [ref=e38]:
+            - link "Home" [ref=e39] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=e40]:
+            - link "Works" [ref=e41] [cursor=pointer]:
+              - /url: /works
+          - listitem [ref=e42]:
+            - link "Studio" [ref=e43] [cursor=pointer]:
+              - /url: /about
+          - listitem [ref=e44]:
+            - link "Contact" [ref=e45] [cursor=pointer]:
+              - /url: /contact
+      - generic [ref=e46]:
+        - generic [ref=e47]: Contact
+        - list [ref=e48]:
+          - listitem [ref=e49]:
+            - link "hello@karaf.studio" [ref=e50] [cursor=pointer]:
+              - /url: mailto:hello@karaf.studio
+          - listitem [ref=e51]:
+            - link "Telegram" [ref=e52] [cursor=pointer]:
+              - /url: https://t.me/
+      - generic [ref=e53]:
+        - generic [ref=e54]: © 2026
+        - paragraph [ref=e55]: All rights reserved.

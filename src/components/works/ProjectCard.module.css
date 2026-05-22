@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--foreground);
+  position: relative;
+}
+
+.num {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--muted-foreground);
+  z-index: 2;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.card:hover .name {
+  color: var(--muted-foreground);
+}

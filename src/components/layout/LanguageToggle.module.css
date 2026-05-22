@@ -1,0 +1,27 @@
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+.btn {
+  padding: 4px 2px;
+  color: var(--muted-foreground);
+  transition: color var(--dur-fast) var(--ease-out);
+}
+
+.btn:hover {
+  color: var(--foreground);
+}
+
+.active {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+.sep {
+  color: var(--border);
+}
