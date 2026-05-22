@@ -12,7 +12,7 @@ export default function Home() {
   const { t } = useTranslation();
 
   return (
-    <>
+    <div className="slab">
       <Hero />
       <FeaturedWorks />
       <StudioStrip />
@@ -25,6 +25,6 @@ export default function Home() {
         </div>
         <TechMarquee />
       </section>
-    </>
+    </div>
   );
 }

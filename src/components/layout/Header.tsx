@@ -1,20 +1,10 @@
-import { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { Button } from '../shared/Button';
 import { LanguageToggle } from './LanguageToggle';
 import styles from './Header.module.css';
 
 export function Header() {
   const { t } = useTranslation();
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
 
   const links = [
     { to: '/', label: t('nav.home'), end: true },
@@ -24,8 +14,8 @@ export function Header() {
   ];
 
   return (
-    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={`${styles.inner} wrap`}>
+    <header className={styles.header}>
+      <div className={styles.inner}>
         <Link to="/" className={styles.brand} aria-label="KARAF home">
           <span className={styles.markDot} aria-hidden="true" />
           <span className={styles.mark}>KARAF</span>
@@ -46,12 +36,11 @@ export function Header() {
 
         <div className={styles.right}>
           <LanguageToggle />
-          <Button as="a" href="/contact" variant="primary" size="sm">
+          <Link to="/contact" className={styles.cta}>
             {t('nav.cta')}
-          </Button>
+          </Link>
         </div>
       </div>
-      <hr className="hairline" />
     </header>
   );
 }
